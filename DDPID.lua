@@ -1,5 +1,11 @@
--- License: MIT
-DDPID = {}
+-- Change the target FPS here. See README.md for notes on choosing a value.
+local targetFps = 50
+
+-- Change this if you want the addon to mess with the FPS counter. This is turned off by default because it's hacky
+-- and ugly.
+local hackTheFpsCounter = false
+
+local DDPID = {}
 DDPID.version = 1
 DDPID.name = "DDPID"
 
@@ -11,17 +17,14 @@ function DDPID:New(control)
   return instance
 end
 
-function DDPID:Initialise()
-  -- Change this if you want the addon to mess with the FPS counter. This is turned off by default because it's hacky
-  -- and ugly.
-  local hackTheFpsCounter = false
+function DDPID:Initialise()  
   -- PID control terms.
   self.Kp = 1
   self.Ki = 0.8
   self.Kd = 0
   self.outMax = 100
   self.outMin = 40
-  self:InitialiseSetPoint(50)
+  self:InitialiseSetPoint(targetFps)
   self.enabled = false
     
   if hackTheFpsCounter then
