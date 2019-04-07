@@ -1,0 +1,9 @@
+<GuiXml>
+  <Controls>
+    <TopLevelControl name="DDPID_TopLevelControl" hidden="false" movable="false" mouseEnabled="false" layer="DL_BACKGROUND">
+      <Anchor point="TOP" offsetY="0" />
+      <OnInitialized>DDPID_OnInitialized(self)</OnInitialized>
+      <OnUpdate>if (DrawDistancePID ~= nil) then DrawDistancePID:OnUpdate() end</OnUpdate>
+    </TopLevelControl>
+  </Controls>
+</GuiXml>
