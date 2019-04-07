@@ -28,7 +28,6 @@ function DDPID:Initialise()
   self.enabled = false
     
   if hackTheFpsCounter then
-    -- Comment out this function call if you do NOT want the draw distance setting included in the FPS counter.
     -- Make some vanilla UI controls wider.
     local dW = 20
     ZO_PerformanceMetersFramerateMeter:SetWidth(ZO_PerformanceMetersFramerateMeter:GetWidth() + dW)
